@@ -2,7 +2,7 @@
 
 ## Description ##
 
-A front-end module designed to display line-numbers against code examples that are marked-up inside ```<pre>``` and ```<code>``` elements.
+A front-end NPM module designed to display line-numbers against code examples that are marked-up inside ```<pre>``` and ```<code>``` elements.
 
 ## Purpose ##
 
