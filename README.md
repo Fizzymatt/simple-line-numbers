@@ -134,7 +134,7 @@ pre {
 
 ## More info ##
 
-I plan to write an article on [https://hackerbox.io](https://hackerbox.io) that will provide some more detailed examples, but in the meantime please check out some of my other articles (e.g. [Passing environment variables into a Dockerised NGINX configuration](https://hackerbox.io/articles/dockerised-nginx-env-vars/)) to see how I've used the plugin for my own purposes. Note that I'm using a third-party plugin called [microlight](https://www.npmjs.com/package/microlight) for the actual code highlighting.
+I plan to write an article on [https://hackerbox.io](https://hackerbox.io) that will provide some more detailed examples, but in the meantime please check out some of my other articles (e.g. [Passing environment variables into a Dockerised NGINX configuration](https://hackerbox.io/articles/dockerised-nginx-env-vars/)) to see how I've used the plugin for my own purposes. Note that in my articles I'm using a third-party plugin called [microlight](https://www.npmjs.com/package/microlight) for the actual code highlighting.
 
 - [Visit my blog](https://hackerbox.io)
 - [Follow me on Twitter](https://twitter.com/hackerb0x)
