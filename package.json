@@ -1,0 +1,16 @@
+{
+  "name": "simple-line-numbers",
+  "version": "1.0.5",
+  "description": "Automatically add line numbers to source code that is marked up with pre / code tags",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Matthew Robinson (https://hackerbox.io)",
+  "license": "ISC",
+  "keywords": ["line", "numbers", "code", "pre", "snippets", "examples", "markup"],
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/Fizzymatt/simple-line-numbers.git"
+  }
+}
