@@ -1,6 +1,6 @@
 {
   "name": "simple-line-numbers",
-  "version": "1.0.5",
+  "version": "2.0.0",
   "description": "Automatically add line numbers to source code that is marked up with pre / code tags",
   "main": "index.js",
   "scripts": {

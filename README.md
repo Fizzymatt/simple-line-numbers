@@ -21,11 +21,10 @@ npm i simple-line-numbers
 ```javascript
 // ES6
 import SimpleLineNumbers from 'simple-line-numbers';
-new SimpleLineNumbers().init({});
+new SimpleLineNumbers({});
 
 // ES5
-var SimpleLineNumbers = require('simple-line-numbers');
-new SimpleLineNumbers().init({});
+require('simple-line-numbers')({});
 ```
 
 - on the page(s) where you run simple-line-numbers, ensure that you wrap your code examples in ```<pre>``` and ```<code>``` elements as below (**notice the line-numbers attribute**):
@@ -61,12 +60,12 @@ So, ```<code line-numbers="7">....``` will produce numbers against our code as f
 
 ## Styling Options ##
 
-There are several customisations that can be passed to the **init** method as a javascript object. If any of these options is not provided then a default value will be used.
+There are several customisations that can be made to the default behaviour of simple-line-numbers. If any of these options is not provided then a default value will be used.
 
 For example:
 
 ```javascript
-new SimpleLineNumbers().init({
+new SimpleLineNumbers({
     targetClass: 'line-numbers',
     lineNumbersWrapperClass: 'line-numbers-wrapper',
     lineNumbersStyles: {
