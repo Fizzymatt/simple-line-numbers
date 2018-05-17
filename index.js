@@ -1,4 +1,3 @@
-
 function SimpleLineNumbers (options) {
     var targetClass = options && options.targetClass || 'line-numbers';
     var lineNumbersWrapperClass = options && options.lineNumbersWrapperClass || 'line-numbers-wrapper';
@@ -16,10 +15,10 @@ function SimpleLineNumbers (options) {
 
         var intStartValue = parseInt(codeEls[item].getAttribute(targetClass)) || defaultStartNumber;
         var nodes = codeEls[item].childNodes;
+        var wrapperEl = document.createElement('span');
 
         for (var n = 0; n < nodes.length; n++) {
             var lineCount = (nodes[n].nodeValue.match(/\n/g) || []).length;
-            var wrapperEl = document.createElement('span');
             wrapperEl.setAttribute('class', lineNumbersWrapperClass);
 
             if (!stylesheetOvr.lineNumbersWrapper) {
