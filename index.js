@@ -1,5 +1,5 @@
 function SimpleLineNumbers (options) {
-    var targetClass = options && options.targetClass || 'line-numbers';
+    var targetAttribute = options && options.targetAttribute || 'line-numbers';
     var lineNumbersWrapperClass = options && options.lineNumbersWrapperClass || 'line-numbers-wrapper';
     var lineNumbersStyles = options && options.lineNumbersStyles || { paddingRight: '1rem', borderRight: '#000 1px dashed' };
     var codeGapConfig = options && options.codeGapConfig || { value: 20, unit: 'px' };
@@ -7,19 +7,22 @@ function SimpleLineNumbers (options) {
     var stylesheetOvr = options && options.stylesheetOverrides || {};
 
     var codeEls = document.getElementsByTagName('code');
+
     for (var item in codeEls) {
-        if (!codeEls[item].hasAttribute || !codeEls[item].hasAttribute(targetClass)) continue;
+        if (!codeEls[item].hasAttribute || !codeEls[item].hasAttribute(targetAttribute)) continue;
 
         var preEl = codeEls[item].parentNode;
         if (!preEl) continue;
 
-        var intStartValue = parseInt(codeEls[item].getAttribute(targetClass)) || defaultStartNumber;
+        var intStartValue = parseInt(codeEls[item].getAttribute(targetAttribute)) || defaultStartNumber;
         var nodes = codeEls[item].childNodes;
         var wrapperEl = document.createElement('span');
 
+        wrapperEl.setAttribute('class', lineNumbersWrapperClass);
+        preEl.appendChild(wrapperEl);
+
         for (var n = 0; n < nodes.length; n++) {
             var lineCount = (nodes[n].nodeValue.match(/\n/g) || []).length;
-            wrapperEl.setAttribute('class', lineNumbersWrapperClass);
 
             if (!stylesheetOvr.lineNumbersWrapper) {
                 wrapperEl.style.position = 'absolute';
@@ -33,14 +36,14 @@ function SimpleLineNumbers (options) {
                 if (!stylesheetOvr.lineNumberSpans) el.style.display = 'block';
                 wrapperEl.appendChild(el);
             }
+        }
 
-            preEl.appendChild(wrapperEl);
-            if (!stylesheetOvr.preElement) preEl.style.position = 'relative';
+        
+        if (!stylesheetOvr.preElement) preEl.style.position = 'relative';
 
-            if (!stylesheetOvr.codeElement) {
-                codeEls[item].style.display = 'block';
-                codeEls[item].style.paddingLeft = '' + (wrapperEl.offsetWidth + codeGapConfig.value) + codeGapConfig.unit;
-            }
+        if (!stylesheetOvr.codeElement) {
+            codeEls[item].style.display = 'block';
+            codeEls[item].style.paddingLeft = '' + (wrapperEl.offsetWidth + codeGapConfig.value) + codeGapConfig.unit;
         }
     }
 };

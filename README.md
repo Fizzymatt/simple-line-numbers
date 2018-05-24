@@ -66,7 +66,7 @@ For example:
 
 ```javascript
 new SimpleLineNumbers({
-    targetClass: 'line-numbers',
+    targetAttribute: 'line-numbers',
     lineNumbersWrapperClass: 'line-numbers-wrapper',
     lineNumbersStyles: {
         paddingRight: '1rem',
@@ -74,15 +74,15 @@ new SimpleLineNumbers({
     },
     codeGapConfig: { value: 20, unit: 'px' },
     stylesheetOverrides: {
+        preElement: false
         codeElement: false,
         lineNumbersWrapper: false,
-        lineNumberSpans: false,
-        preElement: false
+        lineNumberSpans: false
     }
 });
 ```
 
-- **targetClass**: specify the class name that simple-line-numbers should use to identify your ```<code>``` tags.
+- **targetAttribute**: specify the class name that simple-line-numbers should use to identify your ```<code>``` tags.
 
 - **lineNumbersWrapperClass**: specify the class that will be applied to the parent ```<span>``` element that simple-line-numbers uses to surround the line-numbers that it generates.
 
@@ -130,6 +130,16 @@ pre {
     display: block;
 }
 ```
+
+## Running the tests ##
+
+You'll need to have **jest** installed globally, so run the following if you haven't installed **jest** already:
+
+```npm i jest -g```
+
+After you've installed **jest**, you can run the tests with:
+
+```npm test```
 
 ## More info ##
 
