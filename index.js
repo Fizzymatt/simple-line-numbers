@@ -12,10 +12,12 @@ function SimpleLineNumbers (options) {
         if (!codeEls[item].hasAttribute || !codeEls[item].hasAttribute(targetAttribute)) continue;
 
         var preEl = codeEls[item].parentNode;
-        if (!preEl) continue;
+        if (!preEl || preEl.tagName.toLowerCase() !== 'pre') continue;
 
         var intStartValue = parseInt(codeEls[item].getAttribute(targetAttribute)) || defaultStartNumber;
         var nodes = codeEls[item].childNodes;
+        if (nodes.length === 0) continue;
+
         var wrapperEl = document.createElement('span');
 
         wrapperEl.setAttribute('class', lineNumbersWrapperClass);
@@ -23,6 +25,7 @@ function SimpleLineNumbers (options) {
 
         for (var n = 0; n < nodes.length; n++) {
             var lineCount = (nodes[n].nodeValue.match(/\n/g) || []).length;
+            if (lineCount === 0 && nodes[n].nodeValue !== '') lineCount = 1;
 
             if (!stylesheetOvr.lineNumbersWrapper) {
                 wrapperEl.style.position = 'absolute';

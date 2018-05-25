@@ -4,7 +4,8 @@
   "description": "Automatically add line numbers to source code that is marked up with pre / code tags",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "test:coverage": "jest --coverage"
   },
   "author": "Matthew Robinson (https://hackerbox.io)",
   "license": "ISC",
