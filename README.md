@@ -141,6 +141,15 @@ After you've installed **jest**, you can run the tests with:
 
 ```npm test```
 
+## Using the test harness ##
+
+- navigate to the test-harness directory
+- open the **index.html** file in a browser
+
+If necessary, rebuild **bundle.js** by running ```browserify client.js -o bundle.js``` at the terminal
+
+If you don't have **browserify**, install it with ```npm i -g browserify```
+
 ## More info ##
 
 I plan to write an article on [https://hackerbox.io](https://hackerbox.io) that will provide some more detailed examples, but in the meantime please check out some of my other articles (e.g. [Passing environment variables into a Dockerised NGINX configuration](https://hackerbox.io/articles/dockerised-nginx-env-vars/)) to see how I've used the plugin for my own purposes. Note that in my articles I'm using a third-party plugin called [microlight](https://www.npmjs.com/package/microlight) for the actual code highlighting.
