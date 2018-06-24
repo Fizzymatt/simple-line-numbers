@@ -152,7 +152,11 @@ If you don't have **browserify**, install it with ```npm i -g browserify```
 
 ## More info ##
 
-I plan to write an article on [https://hackerbox.io](https://hackerbox.io) that will provide some more detailed examples, but in the meantime please check out some of my other articles (e.g. [Passing environment variables into a Dockerised NGINX configuration](https://hackerbox.io/articles/dockerised-nginx-env-vars/)) to see how I've used the plugin for my own purposes. Note that in my articles I'm using a third-party plugin called [microlight](https://www.npmjs.com/package/microlight) for the actual code highlighting.
+For instructions on how to use the built-in test harness, please read my article: [How to use the simple-line-numbers NPM package to add line numbers to your code examples](https://hackerbox.io/articles/simple-line-numbers).
+
+Also, don't forget to check out some of my other articles (e.g. [Passing environment variables into a Dockerised NGINX configuration](https://hackerbox.io/articles/dockerised-nginx-env-vars/)) to see how I've used the plugin for my own purposes.
+
+Note that in my articles I'm using a third-party plugin called [microlight](https://www.npmjs.com/package/microlight) for the actual code highlighting.
 
 - [Visit my blog](https://hackerbox.io)
 - [Follow me on Twitter](https://twitter.com/hackerb0x)
