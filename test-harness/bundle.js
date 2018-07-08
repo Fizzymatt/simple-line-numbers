@@ -5,6 +5,7 @@ function SimpleLineNumbers (options) {
     var lineNumbersStyles = options && options.lineNumbersStyles || { paddingRight: '1rem', borderRight: '#000 1px dashed' };
     var codeGapConfig = options && options.codeGapConfig || { value: 20, unit: 'px' };
     var defaultStartNumber = 1;
+    var floatingLineNumbers = options && options.floatingLineNumbers || false;
     var stylesheetOvr = options && options.stylesheetOverrides || {};
 
     var codeEls = document.getElementsByTagName('code');
@@ -46,6 +47,7 @@ function SimpleLineNumbers (options) {
         if (!stylesheetOvr.preElement) preEl.style.position = 'relative';
 
         if (!stylesheetOvr.codeElement) {
+            floatingLineNumbers && (codeEls[item].style.overflow = 'auto');
             codeEls[item].style.display = 'block';
             codeEls[item].style.paddingLeft = '' + (wrapperEl.offsetWidth + codeGapConfig.value) + codeGapConfig.unit;
         }
@@ -55,5 +57,12 @@ function SimpleLineNumbers (options) {
 module.exports = SimpleLineNumbers;
 },{}],2:[function(require,module,exports){
 var SimpleLineNumbers = require('../index');
-new SimpleLineNumbers ({});
+new SimpleLineNumbers ({
+    floatingLineNumbers: true,
+    lineNumbersStyles: {
+        paddingRight: '1rem',
+        borderRight: '#000 1px dashed',
+        backgroundColor: '#fff'
+    }
+});
 },{"../index":1}]},{},[2]);

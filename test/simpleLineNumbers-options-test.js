@@ -8,6 +8,7 @@ describe('SimpleLineNumbers', () => {
         lineNumbersWrapperStyles: {
             position: 'absolute',
             top: '0px',
+            'padding-right': '1rem',
             'border-right-color': '#000',
             'border-right-width': '1px',
             'border-right-style': 'dashed',
@@ -199,5 +200,32 @@ describe('SimpleLineNumbers', () => {
         for (var i=0; i<lineNumberSpans.length; i++) {
             expect(lineNumberSpans[i].style._values).toEqual({});
         }
+    });
+
+    test('does not apply "overflow: auto" to the "code" element if the floatingLineNumbers option is NOT set to true', () => {
+        new SimpleLineNumbers({});
+        var codeEls = document.getElementsByTagName('code');
+
+        expect(codeEls[0].style._values).toEqual(defaultValues.codeStyles);
+    });
+
+    test('does not apply "overflow: auto" to the "code" element if the floatingLineNumbers option is set to false', () => {
+        var customOptions = {
+            floatingLineNumbers: false
+        };
+        new SimpleLineNumbers(customOptions);
+        var codeEls = document.getElementsByTagName('code');
+
+        expect(codeEls[0].style._values).toEqual(defaultValues.codeStyles);
+    });
+
+    test('applies "overflow: auto" to the "code" element if the floatingLineNumbers option is set to true', () => {
+        var customOptions = {
+            floatingLineNumbers: true
+        };
+        new SimpleLineNumbers(customOptions);
+        var codeEls = document.getElementsByTagName('code');
+
+        expect(codeEls[0].style._values).toEqual(Object.assign({ overflow: 'auto' }, defaultValues.codeStyles));
     });
 });

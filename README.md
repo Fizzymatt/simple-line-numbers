@@ -62,7 +62,7 @@ So, ```<code line-numbers="7">....``` will produce numbers against our code as f
 
 There are several customisations that can be made to the default behaviour of simple-line-numbers. If any of these options is not provided then a default value will be used.
 
-For example:
+For example (default values are shown):
 
 ```javascript
 new SimpleLineNumbers({
@@ -78,7 +78,8 @@ new SimpleLineNumbers({
         codeElement: false,
         lineNumbersWrapper: false,
         lineNumberSpans: false
-    }
+    },
+    floatingLineNumbers: false
 });
 ```
 
@@ -129,6 +130,20 @@ pre {
 .line-numbers-wrapper span {
     display: block;
 }
+```
+
+- **floatingLineNumbers**: this will allow the text in the ```<code>``` block to disappear beneath the line-numbers when scrolled, maintaining the visibility of the line-numbers at all times.
+
+NOTE: you'll probably need to give the line-numbers a background colour to make this look nice. You can use the **lineNumbersStyles** option for this.
+
+e.g.
+
+```javascript
+lineNumbersStyles: {
+        paddingRight: '1rem',
+        borderRight:'#b5f7ff 1px dashed',
+        backgroundColor: '#fff'
+    },
 ```
 
 ## Running the tests ##
