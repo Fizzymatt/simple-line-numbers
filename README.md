@@ -74,7 +74,7 @@ new SimpleLineNumbers({
     },
     codeGapConfig: { value: 20, unit: 'px' },
     stylesheetOverrides: {
-        preElement: false
+        preElement: false,
         codeElement: false,
         lineNumbersWrapper: false,
         lineNumberSpans: false
